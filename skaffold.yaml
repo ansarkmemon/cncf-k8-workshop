@@ -1,0 +1,31 @@
+apiVersion: skaffold/v2beta4
+kind: Config
+metadata:
+  name: source
+build:
+  artifacts:
+  - image: amourycodes/blog-frontend
+    context: frontend
+    sync:
+      manual:
+      - src: "src/**/*.(js|css|scss)"
+        dest: "."
+  - image: amourycodes/posts-service
+    context: posts-service
+    sync:
+      manual:
+      - src: "src/**/*.js"
+        dest: "."
+  - image: amourycodes/users-service
+    context: users-service
+    sync:
+      manual:
+      - src: "src/**/*.js"
+        dest: "."
+deploy:
+  kubectl:
+    manifests:
+    - infra/frontend-deployment.yaml
+    - infra/ingress.yaml
+    - infra/posts-deployment.yaml
+    - infra/users-deployment.yaml
