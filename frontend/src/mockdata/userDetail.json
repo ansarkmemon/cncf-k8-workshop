@@ -1,0 +1,21 @@
+{
+  "user": {
+      "id": "ayCTeEVLIWD1EXfwJ5cZ",
+      "gender": "female",
+      "title": "mrs",
+      "picture": "https://randomuser.me/api/portraits/women/77.jpg",
+      "registerDate": "2020-04-02T08:06:44.774Z",
+      "phone": "022-88890337",
+      "email": "mhrs.hsyny@example.com",
+      "location": {
+          "city": "بروجرد",
+          "timezone": "-3:30",
+          "state": "آذربایجان شرقی",
+          "street": "9007, خاوران",
+          "country": "Iran"
+      },
+      "dateOfBirth": "1959-11-05T08:33:26.306Z",
+      "lastName": "حسینی",
+      "firstName": "مهرسا"
+  }
+}
