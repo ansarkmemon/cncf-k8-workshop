@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-myservicea
+  annotations:
+    # use the shared ingress-nginx
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: blog.com
+    http:
+      paths:
+      - path: /api/users
+        backend:
+          serviceName: users-service
+          servicePort: 3002
+      - path: /api/posts
+        backend:
+          serviceName: posts-service
+          servicePort: 3001
+      - path: /
+        backend:
+          serviceName: frontend-service
+          servicePort: 3000
