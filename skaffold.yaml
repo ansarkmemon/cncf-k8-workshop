@@ -7,9 +7,7 @@ build:
   - image: amourycodes/blog-frontend
     context: frontend
     sync:
-      manual:
-      - src: "src/**/*.(js|css|scss)"
-        dest: "."
+      infer: ["**/*"]
   - image: amourycodes/posts-service
     context: posts-service
     sync:
